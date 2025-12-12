@@ -1,4 +1,4 @@
-import { Image, Modal, StyleSheet, Text, TouchableOpacity, View, Pressable } from 'react-native'
+import { Image, Modal, StyleSheet, Text, TouchableOpacity, View, Pressable, Platform } from 'react-native'
 import React, { useState } from 'react'
 import { moderateScale } from '../../Constants/PixelRatio'
 import Icon from '../../Ui/Icon'
@@ -7,8 +7,7 @@ import NavigationService from '../../Services/Navigation'
 
 const ChatHeader = () => {
     const [openModal, setOpenModal] = useState(false)
-    console.log('openModal---------------------------------', openModal);
-
+  
 
     const handelOpenModal = () => setOpenModal(true)
     const handelCloseModal = () => setOpenModal(false)
@@ -87,7 +86,7 @@ export default ChatHeader
 const styles = StyleSheet.create({
     Container: {
         padding: moderateScale(15),
-        paddingTop: moderateScale(30),
+        paddingTop: 0,
         backgroundColor: '#fff',
     },
     topView: {
